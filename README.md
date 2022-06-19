@@ -70,7 +70,7 @@ Page changes that occur outside of the component will not trigger a `PageChanged
 
 * `Page`: For setting an initial page number for the component (such as a page number that was cached)
 * `Disabled`: If set to `true`, all controls cannot be interacted with by the user
-* `HideIfNoResults`: If set to `false`, the pager will not be rendered if `TotalPages` is 0
+* `HideIfNotNeeded`: If set to `false`, the pager will be rendered even if `TotalPages` is 1
 * `ShowInputter`: If set to `false`, the manual input field for a page number will not be available for users
 
 <h3>Styling</h3>
