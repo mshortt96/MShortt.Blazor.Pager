@@ -44,7 +44,7 @@ public partial class Pager : IDisposable
     public EventCallback<int> PageChanged
     {
         get => _pageChanged;
-        set => _pageChanged = value.HasDelegate ? value : throw new ArgumentOutOfRangeException(nameof(_pageChanged));
+        set => _pageChanged = value.HasDelegate ? value : throw new ArgumentException(nameof(PageChanged));
     }
     #endregion
 
@@ -62,7 +62,7 @@ public partial class Pager : IDisposable
         Page = 1;
         TotalPages = 1;
         ShowInputter = true;
-        HideIfNoResults = true;
+        HideIfNotNeeded = true;
     }
     #endregion
 

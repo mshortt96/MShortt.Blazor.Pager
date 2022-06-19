@@ -1,4 +1,4 @@
-﻿@if(!HideIfNoResults || TotalPages > 1)
+﻿@if(!HideIfNotNeeded || TotalPages > 1)
 {
     <div class="mshortt-pager">
 
@@ -45,7 +45,7 @@
     public bool ShowInputter { get; set; }
 
     [Parameter]
-    public bool HideIfNoResults { get; set; }
+    public bool HideIfNotNeeded { get; set; }
 
     private bool DecrementalButtonsDisabled => ButtonDisabled(1);
     private bool IncrementalButtonsDisabled => ButtonDisabled(TotalPages);
