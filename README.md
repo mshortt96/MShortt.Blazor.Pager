@@ -1,0 +1,1 @@
+MShortt.Blazor.Pager
