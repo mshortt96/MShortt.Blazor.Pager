@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShortt.Blazor.Pager", "MShortt.Blazor.Pager\MShortt.Blazor.Pager.csproj", "{01639951-A5CF-44F8-9E91-71223E478F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShortt.Blazor.Pager.UITests", "MShortt.Blazor.Pager.UITests\MShortt.Blazor.Pager.UITests.csproj", "{784260DD-A626-49BA-BE5E-D599E8E5F285}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01639951-A5CF-44F8-9E91-71223E478F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01639951-A5CF-44F8-9E91-71223E478F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01639951-A5CF-44F8-9E91-71223E478F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01639951-A5CF-44F8-9E91-71223E478F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{784260DD-A626-49BA-BE5E-D599E8E5F285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784260DD-A626-49BA-BE5E-D599E8E5F285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784260DD-A626-49BA-BE5E-D599E8E5F285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784260DD-A626-49BA-BE5E-D599E8E5F285}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5BFBF90-7F4C-4859-B684-83861E4F704F}
+	EndGlobalSection
+EndGlobal

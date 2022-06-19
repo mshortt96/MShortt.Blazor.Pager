@@ -1,0 +1,45 @@
+﻿@using MShortt.Blazor.Pager
+
+@page "/"
+
+<PageTitle>Index</PageTitle>
+
+@foreach(string item in PageItems)
+{
+    <p class="text-center">
+        @item
+    </p>
+}
+
+<Pager Page="Page" TotalPages="TotalPages" PageChanged="HandlePageChange"/>
+
+@code {
+    private readonly IEnumerable<string> AllItems;
+    private IEnumerable<string> PageItems;
+    private int Page;
+    private int TotalPages => (int)Math.Ceiling((double)AllItems.Count() / ItemsPerPage);
+
+    private const int ItemsPerPage = 5;
+
+    public Index()
+    {
+        List<string> allItemsList = new List<string>();
+        for(int i = 1; i <= 3000; i++)
+            allItemsList.Add($"Item {i}");
+
+        AllItems = allItemsList;
+    }
+
+    protected override void OnInitialized()
+    {
+        HandlePageChange(1);
+    }
+
+    private void HandlePageChange(int page)
+    {
+        Page = page;
+
+        int offset = ItemsPerPage * (page - 1);
+        PageItems = AllItems.Skip(offset).Take(ItemsPerPage);
+    }
+}

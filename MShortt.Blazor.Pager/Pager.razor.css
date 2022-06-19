@@ -1,0 +1,11 @@
+﻿.mshortt-pager, .mshortt-pager-inputter {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.mshortt-pager-inputter {
+    display: block;
+    width: 5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}

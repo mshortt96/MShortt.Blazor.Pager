@@ -1,0 +1,65 @@
+﻿@if(!HideIfNoResults || TotalPages > 1)
+{
+    <div class="mshortt-pager">
+
+        @if(AllowJumping)
+        {
+            <button type="button" class="mshortt-pager-btn mshortt-pager-jumpback-btn" disabled="@DecrementalButtonsDisabled" @onclick="async () => await JumpPagesAsync(true)">
+                &lt&lt
+            </button>
+        }
+
+        <button type="button" class="mshortt-pager-btn mshortt-pager-prev-btn" disabled="@DecrementalButtonsDisabled" @onclick="async () => await ChangePageAsync(Page - 1)">
+            Prev
+        </button>
+
+        <button type="button" class="mshortt-pager-btn mshortt-pager-next-btn" disabled="@IncrementalButtonsDisabled" @onclick="async () => await ChangePageAsync(Page + 1)">
+            Next
+        </button>
+
+        @if (AllowJumping)
+        {
+            <button type="button" class="mshortt-pager-btn mshortt-pager-jumpahead-btn" disabled="@IncrementalButtonsDisabled" @onclick="async () => await JumpPagesAsync(false)">
+                &gt&gt
+            </button>
+        }
+
+        @if (ShowInputter)
+        {
+            <input type="number" class="mshortt-pager-inputter" min="1" max="TotalPages" @onchange="ChangePageViaInputterAsync" 
+                disabled="@(DecrementalButtonsDisabled && IncrementalButtonsDisabled)" placeholder="Page" />
+        }
+
+        <p class="mshortt-pager-indicator">
+            Page @Page of @TotalPages
+        </p>
+
+    </div>
+}
+
+@code {
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public bool ShowInputter { get; set; }
+
+    [Parameter]
+    public bool HideIfNoResults { get; set; }
+
+    private bool DecrementalButtonsDisabled => ButtonDisabled(1);
+    private bool IncrementalButtonsDisabled => ButtonDisabled(TotalPages);
+
+    private async Task ChangePageViaInputterAsync(ChangeEventArgs inputterChangeEventArgs)
+    {
+        string valueAsString = inputterChangeEventArgs.Value?.ToString() ?? "1";
+        int value;
+        if (int.TryParse(valueAsString, out value))
+            await ChangePageAsync(value);
+    }
+
+    private bool ButtonDisabled(int associatedPageNumber)
+    {
+        return Disabled || TotalPages == 1 || Page == associatedPageNumber;
+    }
+}
